@@ -22,7 +22,7 @@
             <div *ngIf="name.errors.required">Обязательно для заполнения</div>
           </div>
           <input type="date" class="dataEmployee__personal-data" [ngModel]="employee.birthday | date:'yyyy-MM-dd'"
-            (ngModelChange)="employee.birthday=$event.target.value" [ngModelOptions]="{standalone: true}">
+            (ngModelChange)="employee.birthday=$event" [ngModelOptions]="{standalone: true}">
           <select class="dataEmployee__personal-data" [(ngModel)]="employee.position" [ngModelOptions]="{standalone: true}">
             <option value="писатель">писатель</option>
             <option value="музыкант">музыкант</option>
