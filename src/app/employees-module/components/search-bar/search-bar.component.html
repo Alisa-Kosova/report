@@ -1,0 +1,10 @@
+<div class="search-bar">
+  <div class="search-bar__block-search">
+    <input class="search-bar__input" placeholder="Фамилия" (keyup)="search($event.target.value)" >
+  </div>
+  <div class="search-bar__block-buttons">
+    <button class="search-bar__button" type="button" (click)="addEmpoyee()">Добавить</button>
+    <button class="search-bar__button" type="button" (click)="editEmpoyee()">Редактировать</button>
+    <button class="search-bar__button" type="button" (click)="deleteEmpoyee()">Удалить</button>
+  </div>
+</div>

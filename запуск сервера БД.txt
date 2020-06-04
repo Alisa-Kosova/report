@@ -1,0 +1,6 @@
+https://www.mongodb.com/download-center/community - сервер mongodb
+
+C:\data\db - путь к базе mongodb
+C:\mongodb\bin\mongod.exe - запуск mongodb
+
+node app.js - запуск express-server

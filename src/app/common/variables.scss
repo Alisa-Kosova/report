@@ -1,0 +1,22 @@
+$darkBackground: #2E2E2E;
+$lightFont: #d1d1d9;
+
+@mixin button-style {
+  font-size: 16px;
+  font-family: serif;
+  border-radius: 3px;
+}
+
+@mixin color-button {
+  @include button-style;
+  padding: 5px 10px;
+  box-shadow:
+   0 1px rgba(255,255,255,.2) inset,
+   0 3px 5px rgba(0,1,6,.5),
+   0 0 1px 1px rgba(0,1,6,.2);
+  margin: 10px;
+  width: 100px;
+  height: 20px;
+  text-align: center;
+  cursor: pointer;
+}

@@ -1,0 +1,51 @@
+<div class="modal">
+  <div class="modal-content">
+    <header class="modal-content__header">
+      <div>Добавление/Редактирование</div>
+      <span class="close" (click)=closePopup()>&times;</span>
+    </header>
+    <form name="employeeForm" enctype="multipart/form-data">
+      <div class="dataEmployee">
+        <figure class="dataEmployee__photo">
+          <img [src]="urlPhoto" class="dataEmployee__photo-img" alt="фото">
+          <input type='file' (change)="selectFile($event)" class="dataEmployee__photo-input">
+        </figure>
+        <div class="dataEmployee__name">
+          <input type="text" class="dataEmployee__personal-data" placeholder="Имя" [(ngModel)]="employee.name"
+            [ngModelOptions]="{standalone: true}" required #name="ngModel">
+          <div class="dataEmployee__field-invalid" *ngIf="name.invalid && (name.dirty || name.touched)">
+            <div *ngIf="name.errors.required">Обязательно для заполнения</div>
+          </div>
+          <input type="text" class="dataEmployee__personal-data" placeholder="Фамилия" [(ngModel)]="employee.surname"
+            [ngModelOptions]="{standalone: true}" required #surname="ngModel">
+          <div class="dataEmployee__field-invalid" *ngIf="surname.invalid && (surname.dirty || surname.touched)">
+            <div *ngIf="name.errors.required">Обязательно для заполнения</div>
+          </div>
+          <input type="date" class="dataEmployee__personal-data" [ngModel]="employee.birthday | date:'yyyy-MM-dd'"
+            (ngModelChange)="employee.birthday=$event.target.value" [ngModelOptions]="{standalone: true}">
+          <select class="dataEmployee__personal-data" [(ngModel)]="employee.position" [ngModelOptions]="{standalone: true}">
+            <option value="писатель">писатель</option>
+            <option value="музыкант">музыкант</option>
+            <option value="художник">художник</option>
+          </select>
+          <label><input type="checkbox" class="dataEmployee__personal-data" [(ngModel)]="employee.remoteWork"
+              [ngModelOptions]="{standalone: true}">
+            Удаленка</label>
+        </div>
+        <div class="dataEmployee__address">
+          <input type="text" placeholder="Город" class="dataEmployee__personal-data" [ngModel]="employee?.address?.city"
+            (ngModelChange)="employee.address.city=$event" [ngModelOptions]="{standalone: true}">
+          <input type="text" placeholder="Улица" class="dataEmployee__personal-data" [ngModel]="employee?.address?.street"
+            (ngModelChange)="employee.address.street=$event" [ngModelOptions]="{standalone: true}">
+          <input type="text" placeholder="Дом" class="dataEmployee__personal-data" [ngModel]="employee?.address?.house"
+            (ngModelChange)="employee.address.house=$event" [ngModelOptions]="{standalone: true}">
+          <input type="text" placeholder="Квартира" class="dataEmployee__personal-data" [ngModel]="employee?.address?.flat"
+            (ngModelChange)="employee.address.flat=$event" [ngModelOptions]="{standalone: true}">
+        </div>
+      </div>
+      <div class="modal-content__block-button">
+        <div class="modal-content__button" (click)="saveEmployee()">Сохранить</div>
+      </div>
+    </form>
+  </div>
+</div>

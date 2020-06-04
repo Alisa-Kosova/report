@@ -1,0 +1,22 @@
+body,
+html {
+  height: 100%;
+}
+
+app-root {
+  display: flex;
+  flex-direction: column;
+  height: 100%;
+}
+  
+app-header {
+  flex: 0 0 auto;
+}
+  
+app-footer {
+  flex: 0 0 auto;
+}
+  
+app-employees {
+  flex: 1 0 auto;
+}

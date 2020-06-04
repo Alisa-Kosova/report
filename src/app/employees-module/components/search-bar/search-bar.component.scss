@@ -1,0 +1,31 @@
+@import '../../../common/variables.scss';
+
+.search-bar {
+  background: linear-gradient(90deg, #A7202C, #D56044, #A7202C);
+  padding: 5px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  flex-wrap: wrap;
+
+  @media (max-width: 610px) {
+    justify-content: center;
+  }
+}
+
+.search-bar__block-search,
+.search-bar__block-buttons {
+  width: 300px;;
+}
+
+.search-bar__input {
+  margin: 5px;
+  border-radius: 3px;
+  width: 280px;
+}
+
+.search-bar__button {
+  // @include button-style;
+  // background-color: $lightFont;
+  margin: 5px;
+}

@@ -1,0 +1,43 @@
+@import '../../../common/variables.scss';
+
+.table-emploees {
+  margin: 0 auto;
+  border-collapse: collapse; 
+  width: 100%;
+  cursor: pointer;
+}
+
+.table-emploees__head {
+  background-color: $lightFont;
+}
+
+.table-emploees__cursor {
+  position: absolute;
+  width: 7px;
+  height: 100%;
+  cursor: col-resize;
+}
+
+.table-emploees__column-head {
+  border-left: solid 1px #000000;
+  border-right: solid 1px #000000;
+  position: relative;
+  cursor: col-resize;
+}
+
+.table-emploees-conteiner {
+  overflow: auto;
+  margin: 10px;
+}
+
+.table-emploees__column-head--sort-dec::after {
+  content: '\25bc'; 
+}
+
+.table-emploees__column-head--sort-inc::after {
+  content: '\25b2'; 
+}
+
+.table-emploees__column--active {
+  background-color: #f7f5f5;
+}

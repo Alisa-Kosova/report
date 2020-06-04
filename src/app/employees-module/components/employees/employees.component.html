@@ -1,0 +1,21 @@
+<app-search-bar (searchEmployee)=searchEmployee($event) (updateEmployees)=updateEmployees()></app-search-bar>
+
+<div class="table-emploees-conteiner">
+  <table class="table-emploees">
+    <thead class="table-emploees__head">
+      <th *ngFor="let headName of employeesHead" class="table-emploees__column-head" 
+        [ngClass]="{'table-emploees__column-head--sort-inc': headName===sort && order==='inc',
+        'table-emploees__column-head--sort-dec': headName===sort && order==='dec'}"
+        (click)="setSort(headName, $event.target)">
+        <div class="table-emploees__cursor" [appResizeColumn]="headName"></div>{{headName}}
+      </th>
+    </thead>
+    <tbody>
+      <tr *ngFor="let employee of employees | sortTable : order : sort" 
+      [app-employee]="employee"
+      [ngClass]="{'table-emploees__column--active': employee===activeElement}"
+      (click)="setActive(employee)"></tr>
+    </tbody>
+  </table>
+</div>
+<popup (updateEmployees)=updateEmployees()></popup>

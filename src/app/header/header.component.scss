@@ -1,0 +1,38 @@
+@import '../common/variables.scss';
+
+.header {
+  background-color: $darkBackground;
+  height: 100px;
+  display: flex;
+  justify-content: space-around;
+  color: $lightFont;
+}
+
+.header__logo {
+  height: 80px;
+  width: auto;
+  margin: 10px;
+}
+
+.header__title {
+  color: #FFFFFF;
+}
+
+.header__authorization-block,
+.header__logo-block {
+  display: flex;
+  align-items: center;
+}
+
+.header__button {
+  @include color-button;
+}
+
+@media (max-width: 600px) {
+  .header__authorization-block {
+    display: block;
+  }
+  .header__title {
+    display: none;
+  }
+}
